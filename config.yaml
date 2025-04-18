@@ -1,0 +1,24 @@
+default:
+  threads: 50
+  rate_limit: 100
+  recursive_depth: 3
+
+dns:
+  default_servers: [1.1.1.1, 8.8.8.8]
+  timeout: 2
+
+wayback:
+  timeout: 30
+  max_urls: 10000
+  request_delay: 1
+
+bruteforce:
+  http_timeout: 5
+  max_redirects: 3
+
+vulnerability:
+  xss_payload_file: "wordlists/xss_payloads.txt"
+  takeover_services:
+    github.io: "Pages"
+    azurewebsites.net: "Azure"
+    cloudfront.net: "CloudFront"
