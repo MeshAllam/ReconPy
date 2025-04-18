@@ -20,7 +20,7 @@ ReconPy is an automated reconnaissance tool designed for bug bounty hunters and 
 git clone https://github.com/MeshAllam/ReconPy.git
 cd ReconPy
 pip install -r requirements.txt
-
+```
 
 ## Usage
 ```bash
@@ -42,3 +42,4 @@ python reconpy.py vuln takeover dev.example.com
 
 # 5. Full Recon Workflow
 python reconpy.py full example.com --output-dir recon_results/
+```
