@@ -1,0 +1,6 @@
+admin
+api
+dev
+test
+stage
+prod
