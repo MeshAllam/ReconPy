@@ -83,7 +83,7 @@ python main.py full example.com \
 ```
 
 ## Output Structure
-
+```
 results/
 ├── subdomains/
 │   └── example.com_2023-11-20.json
@@ -92,32 +92,26 @@ results/
 └── vulnerabilities/
     ├── xss_results.json
     └── takeover_report.json
-
+```
 ## Pro Tips
 1. Wordlist Management
-   ```bash
-  # Generate custom wordlists
-  python tools/wordlist_gen.py -d example.com -o custom_wordlist.txt
-  ```
-
+```bash
+# Generate custom wordlists
+python tools/wordlist_gen.py -d example.com -o custom_wordlist.txt
+```
 2. Continuous Monitoring
 ```bash
-    # Schedule daily scans
-    crontab -e
-    0 2 * * * cd /path/to/ReconPy && python main.py monitor example.com
+# Schedule daily scans
+crontab -e
+0 2 * * * cd /path/to/ReconPy && python main.py monitor example.com
 ```
 
-## Contributing
-
-    Fork the repository
-
-    Create feature branch (git checkout -b feature/amazing-feature)
-
-    Commit changes (git commit -m 'Add amazing feature')
-
-    Push to branch (git push origin feature/amazing-feature)
-
-    Open Pull Request
+Contributing
+1. Fork the repository
+2. Create feature branch (git checkout -b feature/amazing-feature)
+3. Commit changes (git commit -m 'Add amazing feature')
+4. Push to branch (git push origin feature/amazing-feature)
+5. Open Pull Request
 
 ## License
 
