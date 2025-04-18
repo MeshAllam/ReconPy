@@ -6,7 +6,7 @@
 
 Automated reconnaissance tool for bug bounty hunters and penetration testers, featuring intelligent scanning and machine learning-enhanced workflows.
 
-## 🔍 Features
+## Features
 
 - **Subdomain Discovery**
   - DNS brute-forcing with adaptive wordlists
@@ -23,7 +23,7 @@ Automated reconnaissance tool for bug bounty hunters and penetration testers, fe
   - Subdomain takeover identification
   - ML-powered anomaly detection
 
-## 🛠 Installation
+## Installation
 
 ### Standard Installation
 ```bash
@@ -39,40 +39,50 @@ source venv/bin/activate  # Linux/Mac
 # Install dependencies
 pip install --upgrade pip
 pip install -r requirements.txt
-
-Kali Linux Specific
-bash
+```
+## Kali Linux Specific
+```bash
 
 # Install build dependencies
 sudo apt update && sudo apt install -y python3-dev libssl-dev libffi-dev
 
 # Install with additional security tools
 pip install python-nmap python-whois
-
-🚀 Basic Usage
+```
+## Basic Usage
 Subdomain Enumeration
-bash
+```bash
 
 python main.py enum example.com -o results/subdomains.json
-
+```
 Directory Bruteforcing
-bash
+```bash
 
 python main.py dir https://example.com \
   -w wordlists/common.txt \
   -e php,html,js \
   -t 50  # Threads
-
+```
+Vulnerability Scanning
+```bash
+# XSS Test
+python reconpy.py vuln xss "http://example.com/search?q=test" -o xss_results.json
+```
+Subdomain Takeover Check  
+```bash
+python reconpy.py vuln takeover dev.example.com
+```
 Advanced Workflows
-bash
+```bash
 
 # Full reconnaissance pipeline
 python main.py full example.com \
   --output-dir recon_results/ \
   --threads 100 \
   --deep-scan
+```
 
-📂 Output Structure
+## Output Structure
 
 results/
 ├── subdomains/
@@ -83,22 +93,21 @@ results/
     ├── xss_results.json
     └── takeover_report.json
 
-📌 Pro Tips
+## Pro Tips
+1. Wordlist Management
+   ```bash
+  # Generate custom wordlists
+  python tools/wordlist_gen.py -d example.com -o custom_wordlist.txt
+  ```
 
-    Wordlist Management
-    bash
-
-# Generate custom wordlists
-python tools/wordlist_gen.py -d example.com -o custom_wordlist.txt
-
-Continuous Monitoring
-bash
-
+2. Continuous Monitoring
+```bash
     # Schedule daily scans
     crontab -e
     0 2 * * * cd /path/to/ReconPy && python main.py monitor example.com
+```
 
-🤝 Contributing
+## Contributing
 
     Fork the repository
 
@@ -110,7 +119,7 @@ bash
 
     Open Pull Request
 
-📜 License
+## License
 
 Distributed under MIT License. See LICENSE for more information.
 
